@@ -5,4 +5,6 @@ package stephchr000.trackmod.stephchr000.trackmod.proxy;
  */
 public class ServerProxy implements CommonProxy {
 
+    @Override
+    public void init() {}
 }

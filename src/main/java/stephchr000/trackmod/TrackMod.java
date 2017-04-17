@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import stephchr000.trackmod.stephchr000.trackmod.proxy.CommonProxy;
+import stephchr000.trackmod.stephchr000.trackmod.stephchr000.trackmod.init.ModItems;
 
 @Mod(modid = Reference.MOD_ID, name= Reference.NAME,version = Reference.VERSION,acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS)
 public class TrackMod {
@@ -20,12 +21,18 @@ public static CommonProxy proxy;
 public void preInit(FMLPreInitializationEvent event)
 {
 System.out.println("PreInit");
+    ModItems.init();
+    ModItems.register();
+
+
 }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
         System.out.println("Init");
+        proxy.init();
+
     }
 
     @Mod.EventHandler
